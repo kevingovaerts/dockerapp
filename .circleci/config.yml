@@ -21,7 +21,5 @@ jobs:
           name: Push newly build Docker image
           command: |
             docker login -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
-            docker tag dockerapp_dockerapp $DOCKER_HUB_ID/dockerapp:$CIRCLE_SHA1
             docker tag dockerapp_dockerapp $DOCKER_HUB_ID/dockerapp:latest
             docker push $DOCKER_HUB_ID/dockerapp:latest
-            docker push $DOCKER_HUB_ID/dockerapp:$CIRCLE_SHA1
